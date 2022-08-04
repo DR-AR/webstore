@@ -12,12 +12,16 @@ import {
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 
+// Seperated menu button into its own function 
 function MenuButton() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+  
+  // will have to expand this function to handle routing to different pages
+  // depending on whats clicked in the menu
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -34,9 +38,9 @@ function MenuButton() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose}>Home</MenuItem>
+        <MenuItem onClick={handleClose}>Catalog</MenuItem>
+        <MenuItem onClick={handleClose}>About</MenuItem>
       </Menu>
     </div>
   )
