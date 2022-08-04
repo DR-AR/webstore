@@ -12,7 +12,7 @@ import {
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import MenuIcon from "@mui/icons-material/Menu";
 
-function NavbarAsh() {
+function MenuButton() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -21,6 +21,28 @@ function NavbarAsh() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  return (
+    <div>
+      <Button startIcon={<MenuIcon />} onClick={handleClick}>Menu</Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Logout</MenuItem>
+      </Menu>
+    </div>
+  )
+}
+
+function NavbarAsh() {
 
   return (
     <AppBar
@@ -38,20 +60,7 @@ function NavbarAsh() {
             justifyContent="space-between"
             alignItems="center"
           >
-            <Button startIcon={<MenuIcon />} onClick={handleClick}>Menu</Button>
-            <Menu
-              id="basic-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              MenuListProps={{
-                'aria-labelledby': 'basic-button',
-              }}
-            >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
-            </Menu>
+            {MenuButton()}
             <Button startIcon={<ShoppingCartIcon />}>Cart</Button>
           </Grid>
         </Stack>
