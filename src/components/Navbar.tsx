@@ -200,7 +200,7 @@ function CartItem() {
   )
 }
 
-function NavbarAsh() {
+function Navbar() {
 
   return (
     <AppBar
@@ -226,4 +226,4 @@ function NavbarAsh() {
     </AppBar>
   );
 }
-export default NavbarAsh;
+export default Navbar;

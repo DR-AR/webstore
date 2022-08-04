@@ -3,22 +3,28 @@ import ReactDOM from "react-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import { lightTheme } from "./style/theme";
-//import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import NavbarAsh from "./components/Navbar-ash";
+import HomePage from "./components/HomePage";
+import { List, ListSubheader } from "@mui/material";
+
+
 
 const App = () => (
   <ThemeProvider theme={lightTheme}>
-    {/* <Navbar/> */}
-    <NavbarAsh/>
-    <h1>Hello World</h1>
-    <Footer/>
+    <List disablePadding={true}>
+      <ListSubheader disableGutters={true}>
+        <Navbar />
+      </ListSubheader>
+      <HomePage />
+      <Footer />
+    </List>
   </ThemeProvider>
 );
 
 ReactDOM.render(
   <React.StrictMode>
-    <CssBaseline/>
+    <CssBaseline />
     <App />
   </React.StrictMode>,
   document.getElementById("root")
