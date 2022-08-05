@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 import CssBaseline from "@mui/material/CssBaseline";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import { lightTheme } from "./style/theme";
+import { List, ListSubheader } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import HomePage from "./components/HomePage";
-import { List, ListSubheader } from "@mui/material";
-
+// import HomePage from "./components/HomePage";
+import Catalog from "./components/Catalog";
 
 
 const App = () => (
@@ -16,7 +16,8 @@ const App = () => (
       <ListSubheader disableGutters={true}>
         <Navbar />
       </ListSubheader>
-      <HomePage />
+      {/* <HomePage /> */}
+      <Catalog/>
       <Footer />
     </List>
   </ThemeProvider>
